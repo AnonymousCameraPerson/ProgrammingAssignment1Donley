@@ -5,6 +5,8 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <algorithm>
+#include <random>
 using std::string;
 
 
@@ -23,36 +25,68 @@ logic::logic()
     }*/
 }
 //return type className::class Function name(parameter)
-void stringToArray(string word) {
+void arrayFunction(string word) {
 	char wordArray[1];
 	for (int i = 0; i < std::size(word); i++)
 	{
 		wordArray[i] = word[i];
 	}
 }
-string scrambleWord(string arr[]) {
+void scrambler(string arr[]) {
 	unsigned seed = 0;
 	int n = sizeof(arr) / sizeof(arr[0]);
-	random_shuffle(arr, arr + n);
+	std::random_device rd;
+	std::mt19937 g(rd());
+	std::shuffle(arr->begin(), arr->end(), g);
 }
 void logic::setWord(string newWord)
 {
     word = newWord;
 }
 
-string checkWord(string scrambledWord, string userInput) {
+string checkWord(string word, string userInput) {
 	if (userInput == word)
 		return "true";
 	else
 		return "false";
 }
-
-string logic::getWord()
+string logic::getWord(){
+return word;
+}
+string logic::getWord1()
 {
-	srand(time(0));
+	//srand(time(0));
 	int randomNum = rand() % std::size(smallWords);
 	word = smallWords[randomNum];
     return word;
+}
+string logic::getWord2()
+{
+	//srand(time(1));
+	int randomNum = rand() % std::size(smallWords);
+	word = smallWords[randomNum];
+	return word;
+}
+string logic::getWord3()
+{
+	//srand(time(2));
+	int randomNum = rand() % std::size(mediumWords);
+	word = mediumWords[randomNum];
+	return word;
+}
+string logic::getWord4()
+{
+	//srand(time(0));
+	int randomNum = rand() % std::size(mediumWords);
+	word = mediumWords[randomNum];
+	return word;
+}
+string logic::getWord5()
+{
+	//srand(time(4));
+	int randomNum = rand() % std::size(largeWords);
+	word = largeWords[randomNum];
+	return word;
 }
 
 string logic::checkWord(string scrambledWord, string userInput)

@@ -7,7 +7,12 @@ public:
     logic();
     void setWord(std::string newWord);
     std::string getWord();
-	std::string checkWord(std::string scrambledWord, std::string userInput);
+    std::string getWord1();
+    std::string getWord2();
+    std::string getWord3();
+    std::string getWord4();
+    std::string getWord5();
+	std::string checkWord(std::string word, std::string userInput);
         //constructor
     void introduction();
     //Provides a basic introduction ot the user
@@ -15,7 +20,7 @@ public:
     //Opens a file and reads in the list of words that can be scrambled
     //Returns: true if words inserted and false if not
     bool playGame();
-	string stringToArray(string word);
+	void arrayFunction(std::string word);
     //Carries out the actual word scrmabling
     //Returns: true if user wins and false if not
     std::string scrambler(std::string arr[]);

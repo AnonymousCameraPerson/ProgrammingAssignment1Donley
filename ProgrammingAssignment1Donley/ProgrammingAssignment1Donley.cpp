@@ -1,6 +1,7 @@
 #include <iostream>
 #include <allegro5/allegro.h>
 #include <string>
+#include <ctime>
 #include "logic.h"
 using std::string;
 using namespace std;
@@ -18,8 +19,31 @@ int main()
 {
 	//read the file into game.readFile()
 	game.createLists();
-	game.setWord(game.getWord());
-	//cout << game.getWord() << endl;
+	srand(time(0));
+	game.setWord(game.getWord1());
+	string word1 = game.getWord();
+	cout << word1 << endl;
+	game.setWord(game.getWord2());
+	string word2 = game.getWord();
+	if (word2 == word1)
+	{
+		game.setWord(game.getWord2());
+		word2 = game.getWord();
+	}
+	cout << word2 << endl;
+	game.setWord(game.getWord3());
+	string word3 = game.getWord();
+	cout << word3 << endl;
+	game.setWord(game.getWord4());
+	string word4 = game.getWord();
+	if (word4 == word3) {
+		game.setWord(game.getWord3());
+		word4 = game.getWord();
+	}
+	cout << word4 << endl;
+	game.setWord(game.getWord5());
+	string word5 = game.getWord();
+	cout << word5 << endl;
 
 ///////////////////////////////////////
 	ALLEGRO_THREAD* create1 = NULL, *create2 = NULL;
