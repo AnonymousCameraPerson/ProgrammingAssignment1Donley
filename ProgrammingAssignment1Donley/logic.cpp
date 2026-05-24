@@ -38,7 +38,13 @@ string scrambleWord(string arr[]) {
 void logic::setWord(string newWord)
 {
     word = newWord;
-	//words->append(word);
+}
+
+string checkWord(string scrambledWord, string userInput) {
+	if (userInput == word)
+		return "true";
+	else
+		return "false";
 }
 
 string logic::getWord()
