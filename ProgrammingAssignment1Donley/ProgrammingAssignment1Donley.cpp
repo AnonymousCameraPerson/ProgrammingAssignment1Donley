@@ -17,7 +17,7 @@ bool timeOut = false;
 int main()
 {
 	//read the file into game.readFile()
-	game.setWord("Frank");
+	game.createLists();
 	cout << game.getWord() << endl;
 
 ///////////////////////////////////////
@@ -38,7 +38,7 @@ int main()
 		}
 	}
 	if (finished)
-		cout << "\n\tUser entered niput and that ended the program\n";
+		cout << "\n\tUser entered input and that ended the program\n";
 	else
 		cout<<"\n\tTime ran out and that ended the program\n";
 	system("pause");
@@ -49,12 +49,14 @@ void* input(ALLEGRO_THREAD* ptr, void* arg)
 {
 	finished = false;
 	//while finished is equal to false
-	scrambledWord = game.getFirstWord()
+	string scrambledWord = game.getWord();
 		//print this out
 		//get a word from the user
 		//check the word from the user to the correct word
-	answer = game.checkFirstWord(scrambleWord, UserInput)
-	if (answer == true)
+	string UserInput;
+	cin >> UserInput;
+	string answer = game.checkWord(scrambledWord, UserInput);
+	if (answer == "true")
 			//Guessed the correct word
 	//if all five words were guessed
 		finished = true;

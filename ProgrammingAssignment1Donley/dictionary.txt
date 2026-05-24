@@ -2,6 +2,7 @@ train
 cloak
 maze
 twin
+logic
 header
 summer
 winter
@@ -9,4 +10,7 @@ rabbit
 package
 mousetrap
 dictionary
+continue
+programming
+announce
 
