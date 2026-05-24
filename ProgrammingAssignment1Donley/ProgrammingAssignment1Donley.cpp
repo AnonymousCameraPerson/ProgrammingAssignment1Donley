@@ -18,7 +18,8 @@ int main()
 {
 	//read the file into game.readFile()
 	game.createLists();
-	cout << game.getWord() << endl;
+	game.setWord(game.getWord());
+	//cout << game.getWord() << endl;
 
 ///////////////////////////////////////
 	ALLEGRO_THREAD* create1 = NULL, *create2 = NULL;

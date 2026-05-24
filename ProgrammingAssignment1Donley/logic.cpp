@@ -12,20 +12,33 @@ using std::string;
 //constructor className::className()
 logic::logic()
 {
-    word = "";
+    /*word = "";
     scramble = "";
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < std::size(word); i++)
     {
 		srand(time(0));
 		int randomNum = rand() % std::size(smallWords);
         words[i] = "";
         //no deconstructor needed since no dynamic memory has been created
-    }
+    }*/
 }
 //return type className::class Function name(parameter)
+void stringToArray(string word) {
+	char wordArray[1];
+	for (int i = 0; i < std::size(word); i++)
+	{
+		wordArray[i] = word[i];
+	}
+}
+string scrambleWord(string arr[]) {
+	unsigned seed = 0;
+	int n = sizeof(arr) / sizeof(arr[0]);
+	random_shuffle(arr, arr + n);
+}
 void logic::setWord(string newWord)
 {
     word = newWord;
+	//words->append(word);
 }
 
 string logic::getWord()
