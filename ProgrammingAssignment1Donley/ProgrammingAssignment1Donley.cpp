@@ -22,7 +22,9 @@ int main()
 	srand(time(0));
 	game.setWord(game.getWord1());
 	string word1 = game.getWord();
-	cout << word1 << endl;
+	//game.arrayFunction(word1);
+	string scramword1 = game.scrambler(word1);
+	//cout << scramword1 << endl;
 	game.setWord(game.getWord2());
 	string word2 = game.getWord();
 	if (word2 == word1)

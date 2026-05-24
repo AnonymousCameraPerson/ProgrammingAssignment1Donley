@@ -8,12 +8,14 @@
 #include <algorithm>
 #include <random>
 using std::string;
+using namespace std;
 
 
 //return type className::class Function name()
 //constructor className::className()
 logic::logic()
 {
+
     /*word = "";
     scramble = "";
     for (int i = 0; i < std::size(word); i++)
@@ -31,13 +33,23 @@ void arrayFunction(string word) {
 	{
 		wordArray[i] = word[i];
 	}
+	//scrambler(wordArray);
 }
-void scrambler(string arr[]) {
-	unsigned seed = 0;
-	int n = sizeof(arr) / sizeof(arr[0]);
-	std::random_device rd;
-	std::mt19937 g(rd());
-	std::shuffle(arr->begin(), arr->end(), g);
+
+string scrambler(string word) {
+	//char arr[1];
+	//int size = std::size(word);
+	//for (int i = 0; i < std::size(word); i++) {
+	//	//0, 1, 2, 3, 4
+	//	//select random letter from word
+	//	int randomNumber = rand() % size;
+	//	arr[randomNumber] = word[randomNumber];
+	//	size--;
+	//	
+	//}
+	//string scrambledWord = arr;
+	//return scrambledWord;
+	return word;
 }
 void logic::setWord(string newWord)
 {

@@ -23,7 +23,7 @@ public:
 	void arrayFunction(std::string word);
     //Carries out the actual word scrmabling
     //Returns: true if user wins and false if not
-    std::string scrambler(std::string arr[]);
+    std::string scrambler(std::string word);
     //Takes in a word and scrambles it
     //Returns a scrambled version of the parameter
     void end();
