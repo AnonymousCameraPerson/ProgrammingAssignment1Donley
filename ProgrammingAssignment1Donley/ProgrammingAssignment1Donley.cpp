@@ -19,12 +19,12 @@ int main()
 {
 	//read the file into game.readFile()
 	game.createLists();
-	srand(time(0));
+	srand(time(0)); 
 	game.setWord(game.getWord1());
 	string word1 = game.getWord();
 	//game.arrayFunction(word1);
-	string scramword1 = game.scrambler(word1);
-	//cout << scramword1 << endl;
+	string scramword1= game.scrambler(word1);
+	cout << scramword1 << endl;
 	game.setWord(game.getWord2());
 	string word2 = game.getWord();
 	if (word2 == word1)

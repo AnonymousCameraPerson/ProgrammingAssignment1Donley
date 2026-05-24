@@ -36,20 +36,41 @@ void arrayFunction(string word) {
 	//scrambler(wordArray);
 }
 
-string scrambler(string word) {
-	//char arr[1];
-	//int size = std::size(word);
-	//for (int i = 0; i < std::size(word); i++) {
-	//	//0, 1, 2, 3, 4
-	//	//select random letter from word
-	//	int randomNumber = rand() % size;
-	//	arr[randomNumber] = word[randomNumber];
-	//	size--;
+string logic::scrambler(string word) {
+	char arr[50];
+	int size = std::size(word);
+	int randomChoices[50] = { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 };
+	int numsSeen[50] = { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 };
+	for (int i = 0; i < std::size(word); i++) {
+		randomChoices[i] = i;
+	}    
+
+	//OR while randomChoices is not empty?????
+	for (int i = 0; i < std::size(word); i++) {
+		int randomNumber = rand() % size;
+		//choose from choices
+
+		numsSeen[i] = randomNumber;
+		cout << randomNumber << endl;
+		//remove this number from randomChoices
+		//inner loop goes through every char. 
+		// for each, add to numSeen
+		//remove num from randomChoices
+		for (int j = 0; j < std::size(word); j++) {
+			if (numsSeen[i] == randomChoices[j]){
+				//remove randomChoices[j] from randomChoices
+			}
+			else {
+				arr[randomNumber] = word[randomNumber];
+			}
+		}
+	
+		size--;
 	//	
-	//}
-	//string scrambledWord = arr;
-	//return scrambledWord;
-	return word;
+	}
+	string scrambledWord = arr;
+	return scrambledWord;
+	//return word;
 }
 void logic::setWord(string newWord)
 {
