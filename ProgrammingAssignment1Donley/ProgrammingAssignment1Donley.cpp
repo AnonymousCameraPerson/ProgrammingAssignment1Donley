@@ -68,7 +68,7 @@ void* input(ALLEGRO_THREAD* ptr, void* arg)
 
 	game.setWord(game.getWord2());
 	string word2 = game.getWord();
-	if (word2 == word1)
+	while (word2 == word1)
 	{
 		game.setWord(game.getWord2());
 		word2 = game.getWord();
