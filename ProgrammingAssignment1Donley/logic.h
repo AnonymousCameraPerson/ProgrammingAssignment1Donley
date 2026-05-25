@@ -44,9 +44,9 @@ private:
 	std::string words[100];       //array of words read in from the file
 	std::string scrambledWord;       //the scrambled version of the word
     std::string scrambleWords[100]; //array of scrambled words
-    std::string smallWords[5];    //array of words of length 4-5
-    std::string mediumWords[5];   //array of words of length 6-7
-    std::string largeWords[5];    //array of words of length 8+
+    std::string smallWords[100];    //array of words of length 4-5
+    std::string mediumWords[100];   //array of words of length 6-7
+    std::string largeWords[100];    //array of words of length 8+
 	char wordArray[1];        //array of characters to hold the letters of the word
     ////////////////////string word;
     ////////////////////string scramble;

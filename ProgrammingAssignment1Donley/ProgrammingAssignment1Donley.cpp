@@ -61,7 +61,7 @@ void* input(ALLEGRO_THREAD* ptr, void* arg)
 	game.setWord(game.getWord1());
 	string word1 = game.getWord();
 	string scramword1 = game.scrambler(word1);
-	cout << scramword1 << endl;
+	cout << "Guess the word: "<<scramword1 << endl;
 	cin >> userinput1;
 	bool win1 = game.checkWord(word1, userinput1, wins);
 
@@ -73,7 +73,7 @@ void* input(ALLEGRO_THREAD* ptr, void* arg)
 		word2 = game.getWord();
 	}
 	string scramword2 = game.scrambler(word2);
-	cout << scramword2 << endl;
+	cout << "Guess the word: " << scramword2 << endl;
 	cin >> userinput2;
 	bool win2 = game.checkWord(word2, userinput2, wins);
 	//cout << word2 << endl;
@@ -81,19 +81,19 @@ void* input(ALLEGRO_THREAD* ptr, void* arg)
 	game.setWord(game.getWord3());
 	string word3 = game.getWord();
 	string scramword3 = game.scrambler(word3);
-	cout << scramword3 << endl;
+	cout << "Guess the word: " << scramword3 << endl;
 	cin >> userinput3;
 	bool win3 = game.checkWord(word3, userinput3, wins);
 	//cout << word3 << endl;
 
 	game.setWord(game.getWord4());
 	string word4 = game.getWord();
-	if (word4 == word3) {
+	while (word4 == word3) {
 		game.setWord(game.getWord3());
 		word4 = game.getWord();
 	}
 	string scramword4 = game.scrambler(word4);
-	cout << scramword4 << endl;
+	cout << "Guess the word: " << scramword4 << endl;
 	cin >> userinput4;
 	bool win4 = game.checkWord(word4, userinput4, wins);
 	//cout << word4 << endl;
@@ -101,7 +101,7 @@ void* input(ALLEGRO_THREAD* ptr, void* arg)
 	game.setWord(game.getWord5());
 	string word5 = game.getWord();
 	string scramword5 = game.scrambler(word5);
-	cout << scramword5 << endl;
+	cout << "Guess the word: " << scramword5 << endl;
 	cin >> userinput5;
 	bool win5 = game.checkWord(word5, userinput5, wins);
 	//cout << word5 << endl;
