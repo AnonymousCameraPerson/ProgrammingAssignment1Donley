@@ -17,14 +17,22 @@ bool timeOut = false;
 
 int main()
 {
+	string userinput1;
+	string userinput2;
+	string userinput3;
+	string userinput4;
+	string userinput5;
 	//read the file into game.readFile()
 	game.createLists();
 	srand(time(0)); 
+
 	game.setWord(game.getWord1());
 	string word1 = game.getWord();
-	//game.arrayFunction(word1);
 	string scramword1= game.scrambler(word1);
 	cout << scramword1 << endl;
+	cin >> userinput1;
+	game.checkWord(scramword1, userinput1);
+
 	game.setWord(game.getWord2());
 	string word2 = game.getWord();
 	if (word2 == word1)
@@ -32,20 +40,39 @@ int main()
 		game.setWord(game.getWord2());
 		word2 = game.getWord();
 	}
-	cout << word2 << endl;
+	string scramword2 = game.scrambler(word2);
+	cout << scramword2 << endl;
+	cin >> userinput2;
+	game.checkWord(scramword2, userinput2);
+	//cout << word2 << endl;
+
 	game.setWord(game.getWord3());
 	string word3 = game.getWord();
-	cout << word3 << endl;
+	string scramword3 = game.scrambler(word3);
+	cout << scramword3 << endl;
+	cin >> userinput3;
+	game.checkWord(scramword3, userinput3);
+	//cout << word3 << endl;
+
 	game.setWord(game.getWord4());
 	string word4 = game.getWord();
 	if (word4 == word3) {
 		game.setWord(game.getWord3());
 		word4 = game.getWord();
 	}
-	cout << word4 << endl;
+	string scramword4 = game.scrambler(word4);
+	cout << scramword4 << endl;
+	cin >> userinput4;
+	game.checkWord(scramword4, userinput4);
+	//cout << word4 << endl;
+
 	game.setWord(game.getWord5());
 	string word5 = game.getWord();
-	cout << word5 << endl;
+	string scramword5 = game.scrambler(word5);
+	cout << scramword5 << endl;
+	cin >> userinput5;
+	game.checkWord(scramword5, userinput5);
+	//cout << word5 << endl;
 
 ///////////////////////////////////////
 	ALLEGRO_THREAD* create1 = NULL, *create2 = NULL;
