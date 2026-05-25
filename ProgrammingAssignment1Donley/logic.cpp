@@ -45,12 +45,13 @@ string logic::scrambler(string word) {
 	int randomPosition;
 	char charAtRandomPosition;
 
-	for (int i = wordsize-1; i > 0; i--) {
+	for (int i = wordsize; i > 0; i--) {
 		//i equals size of remaining letters to scramble
 		randomPosition = rand() % i;
 		int j = 0;
 		int k = 0;
-		while (k < i){
+		//for (int k=0; k<i;k++){
+		while (k <= wordsize){
 			//bool exists = std::any_of(std::begin(positionsVisited), std::end(positionsVisited), [j](int x) {
 			auto it = std::find(std::begin(positionsVisited), std::end(positionsVisited), k);
 				//}
