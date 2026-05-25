@@ -12,7 +12,8 @@ public:
     std::string getWord3();
     std::string getWord4();
     std::string getWord5();
-	std::string checkWord(std::string word, std::string userInput);
+	std::string checkIntel(int intel);
+	bool checkWord(std::string word, std::string userInput, int& wins);
         //constructor
     void introduction();
     //Provides a basic introduction ot the user

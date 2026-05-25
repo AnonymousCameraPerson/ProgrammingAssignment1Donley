@@ -81,11 +81,14 @@ void logic::setWord(string newWord)
     word = newWord;
 }
 
-string checkWord(string word, string userInput) {
-	if (userInput == word)
-		return "true";
-	else
-		return "false";
+bool logic::checkWord(string word, string userInput, int& wins) {
+	if (userInput == word) {
+		wins++;
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 string logic::getWord(){
 return word;
@@ -126,13 +129,13 @@ string logic::getWord5()
 	return word;
 }
 
-string logic::checkWord(string scrambledWord, string userInput)
-{
-	if (userInput == word)
-		return "true";
-	else
-		return "false";
-}
+//string logic::checkWord(string scrambledWord, string userInput)
+//{
+//	if (userInput == word)
+//		return "true";
+//	else
+//		return "false";
+//}
 
 bool logic::createLists()
 {
@@ -160,6 +163,7 @@ bool logic::createLists()
 				largeWordLength++;
 			}
         }
+		file.close();
     }
     else {
 		std::cerr << "Unable to open file\n";
@@ -167,3 +171,22 @@ bool logic::createLists()
 	return 0;
 }
 
+string logic::checkIntel(int intel) {
+	if (intel == 5){
+		return "Congratulations, you are the smartest!";
+	}
+	else if (intel==4){
+		return "Amazing! Try again to get the highest score! You are almost there!";
+	}
+	else if (intel == 3) {
+		return "You're better than the worst! Try again to get better!";
+	}
+
+	if (intel == 2){
+		return "Good job, try again to get better!";
+	}
+	if (intel == 1) {
+		return "I can see you're a beginner. Keep practicing! You'll get better!";
+	}
+	return "You got nothing.";
+}
