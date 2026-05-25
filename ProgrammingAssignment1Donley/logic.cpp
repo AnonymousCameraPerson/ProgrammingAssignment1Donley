@@ -7,6 +7,7 @@
 #include <ctime>
 #include <algorithm>
 #include <random>
+#include <iterator>
 using std::string;
 using namespace std;
 
@@ -37,39 +38,41 @@ void arrayFunction(string word) {
 }
 
 string logic::scrambler(string word) {
-	char arr[50];
-	int size = std::size(word);
-	int randomChoices[50] = { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 };
-	int numsSeen[50] = { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 };
-	for (int i = 0; i < std::size(word); i++) {
-		randomChoices[i] = i;
-	}    
+	int positionsVisited[20];
+	int wordsize = std::size(word);
+	char wordToReturn[20] = {};
+	int wordToReturnIndex = 0;
+	int randomPosition;
+	char charAtRandomPosition;
 
-	//OR while randomChoices is not empty?????
-	for (int i = 0; i < std::size(word); i++) {
-		int randomNumber = rand() % size;
-		//choose from choices
-
-		numsSeen[i] = randomNumber;
-		cout << randomNumber << endl;
-		//remove this number from randomChoices
-		//inner loop goes through every char. 
-		// for each, add to numSeen
-		//remove num from randomChoices
-		for (int j = 0; j < std::size(word); j++) {
-			if (numsSeen[i] == randomChoices[j]){
-				//remove randomChoices[j] from randomChoices
+	for (int i = wordsize-1; i > 0; i--) {
+		//i equals size of remaining letters to scramble
+		randomPosition = rand() % i;
+		int j = 0;
+		int k = 0;
+		while (k < i){
+			//bool exists = std::any_of(std::begin(positionsVisited), std::end(positionsVisited), [j](int x) {
+			auto it = std::find(std::begin(positionsVisited), std::end(positionsVisited), k);
+				//}
+			if (it != std::end(positionsVisited)) {
+				k++;
+				continue;
+			}
+			else if (j==randomPosition) {
+				charAtRandomPosition = word[k];
+				wordToReturn[wordToReturnIndex] = charAtRandomPosition;
+				positionsVisited[wordToReturnIndex] = k;
+				wordToReturnIndex++;
+				break;
 			}
 			else {
-				arr[randomNumber] = word[randomNumber];
+				j++;
+				k++;
 			}
 		}
-	
-		size--;
-	//	
-	}
-	string scrambledWord = arr;
-	return scrambledWord;
+	}    
+	string returnValue = wordToReturn;
+	return returnValue;
 	//return word;
 }
 void logic::setWord(string newWord)
