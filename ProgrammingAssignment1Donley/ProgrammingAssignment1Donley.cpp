@@ -55,6 +55,7 @@ void* input(ALLEGRO_THREAD* ptr, void* arg)
 	string userinput5;
 	int wins = 0;
 	//read the file into game.readFile()
+	game.playGame();
 	game.createLists();
 	srand(time(0));
 
@@ -106,7 +107,7 @@ void* input(ALLEGRO_THREAD* ptr, void* arg)
 	bool win5 = game.checkWord(word5, userinput5, wins);
 	//cout << word5 << endl;
 	string tellUser = game.checkIntel(wins);
-	cout << tellUser << endl;
+	cout << endl<<tellUser << endl;
 	//cin >> finished;
 	finished = true;
 	return NULL;

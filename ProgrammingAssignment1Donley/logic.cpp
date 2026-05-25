@@ -93,6 +93,9 @@ bool logic::checkWord(string word, string userInput, int& wins) {
 string logic::getWord(){
 return word;
 }
+void logic::playGame() {
+	cout << "Welcome to my version of scramble! This version is slightly different because you only get one chance to guess the word. Try your best!"<<endl<<endl;
+}
 string logic::getWord1()
 {
 	word = "";

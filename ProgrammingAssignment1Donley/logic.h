@@ -20,7 +20,7 @@ public:
     bool createLists();
     //Opens a file and reads in the list of words that can be scrambled
     //Returns: true if words inserted and false if not
-    bool playGame();
+    void playGame();
 	void arrayFunction(std::string word);
     //Carries out the actual word scrmabling
     //Returns: true if user wins and false if not
