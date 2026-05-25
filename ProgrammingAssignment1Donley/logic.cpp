@@ -95,37 +95,52 @@ return word;
 }
 string logic::getWord1()
 {
+	word = "";
 	//srand(time(0));
-	int randomNum = rand() % std::size(smallWords);
-	word = smallWords[randomNum];
+	while (word == "") {
+		int randomNum = rand() % std::size(smallWords);
+		word = smallWords[randomNum];
+	}
     return word;
 }
 string logic::getWord2()
 {
+	word = "";
 	//srand(time(1));
-	int randomNum = rand() % std::size(smallWords);
-	word = smallWords[randomNum];
+	while (word == "") {
+		int randomNum = rand() % std::size(smallWords);
+		word = smallWords[randomNum];
+	}
 	return word;
 }
 string logic::getWord3()
 {
+	word = "";
 	//srand(time(2));
-	int randomNum = rand() % std::size(mediumWords);
-	word = mediumWords[randomNum];
+	while (word == "") {
+		int randomNum = rand() % std::size(mediumWords);
+		word = mediumWords[randomNum];
+	}
 	return word;
 }
 string logic::getWord4()
 {
+	word = "";
 	//srand(time(0));
-	int randomNum = rand() % std::size(mediumWords);
-	word = mediumWords[randomNum];
+	while (word == "") {
+		int randomNum = rand() % std::size(mediumWords);
+		word = mediumWords[randomNum];
+	}
 	return word;
 }
 string logic::getWord5()
 {
+	word = "";
 	//srand(time(4));
-	int randomNum = rand() % std::size(largeWords);
-	word = largeWords[randomNum];
+	while (word== "") {
+		int randomNum = rand() % std::size(largeWords);
+		word = largeWords[randomNum];
+	}
 	return word;
 }
 
@@ -161,6 +176,9 @@ bool logic::createLists()
 			{
 				largeWords[largeWordLength] = line;
 				largeWordLength++;
+			}
+			else {
+				continue;
 			}
         }
 		file.close();
